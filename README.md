@@ -1,6 +1,6 @@
 # prefect-cloud-local
 
-Here I try to get off the ground unit testing [Prefect](https://www.prefect.io/cloud/) with [Pytest](https://docs.pytest.org/en/7.2.x/) inside [Docker](https://www.docker.com/).
+Here I try to get off the ground unit testing [Prefect Cloud 2](https://www.prefect.io/cloud/) with [Pytest](https://docs.pytest.org/en/7.2.x/) inside [Docker](https://www.docker.com/).
 
 # Requirements
     - A Prefect Cloud 2 account
@@ -11,7 +11,7 @@ Here I try to get off the ground unit testing [Prefect](https://www.prefect.io/c
 
 # Usage
 
-0. Sign into [Prefect 2 Cloud](https://app.prefect.cloud/auth/login).
+0. Sign into [Prefect Cloud 2](https://app.prefect.cloud/auth/login).
 
 1. Create a new Workspace.
 ```sh
@@ -128,4 +128,4 @@ Here's what you should see.
 # exit
 ```
 
-11. In Prefect Cloud, in the "prefect-cloud-local" workspace, look for the "my-favorite-flow" run.  Your run probably isn't called 'masked-bullfinch'.  
+11. In Prefect Cloud 2, in the "prefect-cloud-local" workspace, look for the "my-favorite-flow" run.  Your run probably isn't called 'masked-bullfinch'.  
