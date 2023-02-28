@@ -38,3 +38,6 @@ shell:
 	docker run --interactive --tty --volume $$(pwd)/testing-prefect:/workspace/testing-prefect \
 	--env PREFECT_CLOUD_LOCAL_API_KEY=${PREFECT_CLOUD_LOCAL_API_KEY} \
 		${CONTAINER_TAG} /bin/sh
+
+black:
+	docker run --rm -v $$(pwd):/data cytopia/black flows tests
