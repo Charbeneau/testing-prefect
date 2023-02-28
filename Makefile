@@ -40,4 +40,4 @@ shell:
 		${CONTAINER_TAG} /bin/sh
 
 black:
-	docker run --rm -v $$(pwd):/data cytopia/black flows tests
+	docker run --rm --volume $$(pwd):/src --workdir /src pyfound/black:23.1.0 black .
