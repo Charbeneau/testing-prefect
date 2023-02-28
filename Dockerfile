@@ -1,8 +1,6 @@
-FROM python:3.11.1-slim-buster
+FROM prefecthq/prefect:2.8.3-python3.11
 COPY . /workspace
 WORKDIR /workspace
-COPY requirements.txt /
-RUN pip install -r /requirements.txt
 COPY requirements-test.txt /
 RUN pip install -r /requirements-test.txt
 COPY docker-entrypoint.sh /workspace/docker-entrypoint.sh

@@ -34,17 +34,13 @@ build:
 unit-tests:
 	docker run --interactive --tty ${CONTAINER_TAG} unit-tests
 
-login:
-	docker run --interactive --tty --volume $$(pwd)/testing-prefect:/workspace/testing-prefect \
-		--env PREFECT_CLOUD_LOCAL_API_KEY=${PREFECT_CLOUD_LOCAL_API_KEY} \
-		${CONTAINER_TAG} prefect cloud login -k ${PREFECT_CLOUD_LOCAL_API_KEY}
-
 run:
 	docker run --interactive --tty --volume $$(pwd)/testing-prefect:/workspace/testing-prefect \
 		${CONTAINER_TAG} python flows/example.py
 
 shell:
 	docker run --interactive --tty --volume $$(pwd)/testing-prefect:/workspace/testing-prefect \
+	--env PREFECT_CLOUD_LOCAL_API_KEY=${PREFECT_CLOUD_LOCAL_API_KEY} \
 		${CONTAINER_TAG} /bin/sh
 
 lint:
