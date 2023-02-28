@@ -13,7 +13,7 @@ login:
 	prefect cloud login -k ${PREFECT_CLOUD_LOCAL_API_KEY}
 
 unit-test:
-	pytest -v --cov=flows tests/
+	pytest -v --cov=flows tests/ 
 
 run:
 	python ./flows/example.py
