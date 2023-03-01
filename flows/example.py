@@ -1,7 +1,7 @@
 from prefect import flow
 
 
-@flow
+@flow(log_prints=True)
 def my_favorite_flow():
     return 42
 

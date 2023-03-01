@@ -35,8 +35,8 @@ unit-tests:
 	docker run --interactive --tty ${CONTAINER_TAG} unit-tests
 
 shell:
-	docker run --interactive --tty --volume $$(pwd)/testing-prefect:/workspace/testing-prefect \
-	--env PREFECT_CLOUD_LOCAL_API_KEY=${PREFECT_CLOUD_LOCAL_API_KEY} \
+	docker run --interactive --tty \
+		--env PREFECT_CLOUD_LOCAL_API_KEY=${PREFECT_CLOUD_LOCAL_API_KEY} \
 		${CONTAINER_TAG} /bin/sh
 
 black:

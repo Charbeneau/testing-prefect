@@ -111,16 +111,35 @@ Here's what you should see.
 Authenticated with Prefect Cloud! Using workspace '[YOUR EMAIL ADDRESS WITHOUT ANY PERIODS]/prefect-cloud-local'.
 ```
 
-9. **From inside the container**, run the example flow.
+9. **From inside the container**, run a flow.
 ```sh
-# python ./flows/example.py
+# python ./flows/dictionary.py
 ```
 
 Here's what you should see.
 ```sh
-18:51:57.722 | INFO    | prefect.engine - Created flow run 'masked-bullfinch' for flow 'my-favorite-flow'
-18:51:58.515 | INFO    | Flow run 'masked-bullfinch' - Finished in state Completed()
-42
+20:51:04.869 | INFO    | prefect.engine - Created flow run 'orange-avocet' for flow 'dictionaries-flow'
+20:51:05.590 | INFO    | Flow run 'orange-avocet' - Created task run 'encode_task-0' for task 'encode_task'
+20:51:05.593 | INFO    | Flow run 'orange-avocet' - Executing 'encode_task-0' immediately...
+20:51:05.861 | INFO    | Task run 'encode_task-0' - Creating masked_ip from ip.
+20:51:05.862 | INFO    | Task run 'encode_task-0' - Creating masked_device_id from device_id.
+20:51:06.062 | INFO    | Task run 'encode_task-0' - Finished in state Completed()
+20:51:06.197 | INFO    | Flow run 'orange-avocet' - Created task run 'str_to_int_task-0' for task 'str_to_int_task'
+20:51:06.198 | INFO    | Flow run 'orange-avocet' - Executing 'str_to_int_task-0' immediately...
+20:51:06.469 | INFO    | Task run 'str_to_int_task-0' - Making app_version an int.
+20:51:06.563 | INFO    | Task run 'str_to_int_task-0' - Finished in state Completed()
+20:51:06.740 | INFO    | Flow run 'orange-avocet' - Created task run 'create_date_task-0' for task 'create_date_task'
+20:51:06.741 | INFO    | Flow run 'orange-avocet' - Executing 'create_date_task-0' immediately...
+20:51:07.074 | INFO    | Task run 'create_date_task-0' - Creating create_date an int.
+20:51:07.170 | INFO    | Task run 'create_date_task-0' - Finished in state Completed()
+20:51:07.281 | INFO    | Flow run 'orange-avocet' - Finished in state Completed()
+{'app_version': 2,
+ 'create_date': datetime.datetime(2023, 3, 1, 20, 51, 7, 75601),
+ 'device_type': 'android',
+ 'locale': 'RU',
+ 'masked_device_id': 'NTkzLTQ3LTU5Mjg=',
+ 'masked_ip': 'MTk5LjE3Mi4xMTEuMTM1',
+ 'user_id': '424cdd21-063a-43a7-b91b-7ca1a833afae'}
 ```
 
 10. Exit the container.
@@ -128,4 +147,4 @@ Here's what you should see.
 # exit
 ```
 
-11. In Prefect Cloud 2, in the "prefect-cloud-local" workspace, look for the "my-favorite-flow" run.  Your run probably isn't called 'masked-bullfinch'.  
+11. In Prefect Cloud 2, in the "prefect-cloud-local" workspace, look for the "dictionaries-flow" run.  Your run probably isn't called 'orange-avocet'.  
